@@ -1,0 +1,42 @@
+<md-tab-group>
+  <md-tab label="Course Details">
+  	<div class="row">
+ 		<div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-block"> <small class="text-muted">Course Title </small>
+                    <h6>{{model.title}}</h6> <small class="text-muted p-t-3 db">Course Code</small>
+                    <h6>{{model.code}}</h6> <small class="text-muted p-t-3 db">Course Location</small>
+                    <h6>{{model.location}}</h6>
+				</div>
+			                       
+			</div>
+		</div>
+	</div>
+  </md-tab>
+  <md-tab label="Trainees"><div *ngFor="let student of model.trainees"><h3 ></h3>{{student.fullName}}</div></md-tab>  
+  <md-tab label="Material">  
+<!--    <div class="drop-container" ngFileDrop (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
+<h1>Drag & Drop</h1>
+</div> -->
+
+<label class="upload-button">
+  <input type="file" name='file' ngFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+  or choose file(s)
+</label>
+
+<button type="button" class="start-upload-btn" (click)="startUpload()">
+  Start Upload
+</button>
+
+ <md-list>
+    <h3 md-subheader>Files</h3>
+    <md-list-item *ngFor="let file of files">
+      <md-icon md-list-icon>folder</md-icon>
+
+      <h4 md-line>{{file.filename}}</h4>
+      <p md-line> {{file.filepath}} </p>
+    </md-list-item>
+    <md-divider></md-divider>
+</md-list>
+  </md-tab>
+</md-tab-group>

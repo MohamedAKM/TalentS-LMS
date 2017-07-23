@@ -1,0 +1,48 @@
+<md-card>
+    <form [formGroup]="form">
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('fullName')}" [(ngModel)]="model.fullName" mdInput placeholder="Full Name" formControlName="fullName">
+        </md-input-container>
+
+        <md-input-container>
+            <input type="date" style="width:350px" [ngClass]="{'error': isValid('dob')}" mdInput placeholder="Date Of Birth" [(ngModel)]="model.dob" formControlName="dob">
+        </md-input-container>
+         <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('interest')}" mdInput placeholder="Subject of interest" [(ngModel)]="model.interest" formControlName="interest">
+        </md-input-container>
+        <md-input-container>
+            <textarea style="width:350px" [ngClass]="{'error': isValid('bio')}" mdInput placeholder="Bio" formControlName="bio" [(ngModel)]="model.bio"></textarea>
+        </md-input-container>
+        <md-input-container>
+            <textarea style="width:350px" [ngClass]="{'error': isValid('medicalCondition')}" mdInput placeholder="Medical Condition" formControlName="medicalCondition" [(ngModel)]="model.medicalCondition" [(ngModel)]="model.medicalCondition"></textarea>
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" type="tel" [ngClass]="{'error': isValid('mobile')}" mdInput placeholder="Phone Number" [(ngModel)]="model.mobile" formControlName="mobile">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" type="tel" [ngClass]="{'error': isValid('fatherMobile')}" mdInput placeholder="Parent Phone Number" [(ngModel)]="model.fatherMobile" formControlName="fatherMobile">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('location')}" mdInput placeholder="Area, City, Address" [(ngModel)]="model.location" formControlName="location">
+        </md-input-container>        
+        <md-select placeholder="Blood Type" [(ngModel)]="model.bloodType" formControlName="bloodType">
+           <md-option *ngFor="let bt of bts" [value]="bt.title">{{ bt.title }}</md-option>
+        </md-select>
+        <md-select placeholder="Education" [(ngModel)]="model.education" formControlName="education">
+           <md-option *ngFor="let level of educationLevel" [value]="level.title">{{ level.title }}</md-option>
+        </md-select>
+        <md-select placeholder="Gender" [(ngModel)]="model.gender" formControlName="gender">
+           <md-option *ngFor="let gender of genderList" [value]="gender.title">{{ gender.title }}</md-option>
+        </md-select>
+<!--         <md-input-container>
+    <input style="width:350px" type="number" size="10" [ngClass]="{'error': isValid('ssn')}" mdInput placeholder="National ID" [(ngModel)]="model.ssn" formControlName="ssn">
+</md-input-container> -->
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('email')}" type="email" mdInput placeholder="Email" [(ngModel)]="model.email" formControlName="email">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [(ngModel)]="model.password" [ngClass]="{'error': isValid('password')}" type="password" mdInput placeholder="Password" formControlName="password">
+        </md-input-container>
+        <button md-raised-button color="primary" (click)="saveUser(model)">Save Changes</button>
+    </form>
+</md-card>

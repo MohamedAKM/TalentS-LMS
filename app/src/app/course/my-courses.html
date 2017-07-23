@@ -1,0 +1,17 @@
+<button *ngIf="currentUser.groupid==1 || currentUser.groupid==2" color="primary" md-button routerLink="/new-course">Add Course</button><br /><div>
+<button *ngIf="currentUser.groupid==3" color="primary" md-button routerLink="/register">Add User</button><br /><div>
+<button *ngIf="currentUser.groupid!=4" color="primary" md-button routerLink="/assign-course">Add trainee to course</button><br /><div>
+    <div class="row">
+    <div class="col-lg-3 col-md-3" *ngFor="let course of webService.courses | async">
+            <div class="card">
+                            <div class="card-block"> <small class="text-muted">Course Title </small>
+                                <h6>{{course.title}}</h6> <small class="text-muted p-t-3 db">Course Code</small>
+                                <h6>{{course.code}}</h6> <small class="text-muted p-t-3 db">Course Location</small>
+                                <h6>{{course.location}}</h6>
+<button [routerLink]="['/course/view', course.code]" class="btn btn-circle btn-secondary"><i class="fa fa-book"></i></button>
+<button *ngIf="currentUser.groupid==1 || currentUser.groupid==2" [routerLink]="['/course/edit', course.ssn]" class="btn btn-circle btn-secondary"><i class="fa fa-pencil"></i></button>
+<button *ngIf="currentUser.groupid==1 || currentUser.groupid==2" (click)="deleteCourse(course.ssn)" class="btn btn-circle btn-secondary"><i class="fa fa-trash"></i></button></div>
+</div>
+                       
+    </div>
+    </div></div>

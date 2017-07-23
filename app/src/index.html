@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <title>LMS</title>
+    <base href="../">
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>LMS</title> 
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+    <link href="assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+    <link href="assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+    <link href="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="assets/plugins/css-chart/css-chart.css" rel="stylesheet">
+    <!-- Vector CSS -->
+    <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <!-- Calendar CSS -->
+    <link href="assets/plugins/calendar/dist/fullcalendar.css" rel="stylesheet" />
+  </head>
+
+  <body class="fix-header fix-sidebar card-no-border">
+    <my-app>    
+        <div class="preloader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+        </div>
+    </my-app>
+
+    <script src="assets/plugins/bootstrap/js/tether.min.js"></script>
+
+     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+   <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

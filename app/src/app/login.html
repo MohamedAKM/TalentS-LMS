@@ -1,0 +1,35 @@
+        <div class="col-md-6" style="float: none;
+    margin: 0 auto;">
+  
+          <md-toolbar color="primary">
+          <div class="m">
+            <h2><span style="color:#fff;">Login Form</span></h2>
+          </div>
+        </md-toolbar>
+      <md-card >
+         
+            <md-input-container>
+           
+                                                
+              <input type="text"  mdInput [(ngModel)]="user.ssn" placeholder="National ID" name="ssn" #ssn="ngModel" required>
+                                            
+              <span class="help-block" *ngIf="ssn.invalid && ssn.touched">
+                        National ID is required.
+               </span>
+            </md-input-container>
+            <br>
+            <md-input-container>
+
+                <input mdInput [(ngModel)]="user.password" placeholder="Password" type="password" name="password" #password="ngModel" required>
+<!--               <span class="help-block" *ngIf="password.invalid && password.touched">
+                    Password is required.
+           </span> -->          
+            </md-input-container>
+            <br>
+            <button md-raised-button color="primary" (click)="login()" > Login</button>
+            <br><br>
+            <div class="alert alert-danger " *ngIf="errorMessage">{{errorMessage}}</div>
+               <div *ngIf="successMessage">{{successMessage}}</div> 
+        </md-card>
+
+      </div>

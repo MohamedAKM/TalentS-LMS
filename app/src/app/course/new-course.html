@@ -1,0 +1,96 @@
+<md-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <md-input-container >
+            <input style="width:350px" mdInput placeholder="Course code" formControlName="code">
+        </md-input-container>
+        <md-input-container >
+            <input style="width:350px" mdInput placeholder="Course title" formControlName="title">
+        </md-input-container>
+        <md-input-container >
+            <input style="width:350px" mdInput placeholder="Course descriptiom" formControlName="description">
+        </md-input-container>
+           <md-input-container >
+            <input style="width:350px" mdInput placeholder="Course level" formControlName="level">
+        </md-input-container> 
+           <md-input-container >
+            <input style="width:350px" mdInput placeholder="Course language" formControlName="language">
+        </md-input-container>       
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('location')}" mdInput placeholder="Area, City, Address" formControlName="location">
+        </md-input-container>        
+        <md-select placeholder="Course Category" [(ngModel)]="categoryid" formControlName="categoryid">
+           <md-option *ngFor="let category of webService.categories | async" [value]="category.id">{{ category.title }}</md-option>
+        </md-select>
+        <md-select placeholder="Users" [(ngModel)]="userid"  formControlName="userid">
+           <md-option *ngFor="let user of webService.messages | async" [value]="user.ssn">{{ user.fullName }}</md-option>
+        </md-select>
+            <br><br>
+            <ul>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Saturday </md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="sat_time_start" formControlName="sat_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="sat_time_end" formControlName="sat_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Sunday </md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="sun_time_start" formControlName="sun_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="sun_time_end" formControlName="sun_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Monday</md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="mon_time_start" formControlName="mon_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="mon_time_end" formControlName="mon_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Tuesday</md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="tue_time_start" formControlName="tue_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="tue_time_end" formControlName="tue_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Wednesday</md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="wed_time_start" formControlName="wed_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="wed_time_end" formControlName="wed_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Thrusday</md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="thr_time_start" formControlName="thr_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="thr_time_end" formControlName="thr_time_end">
+                    </div>
+                </li>
+                <li>
+                    <div class="sidebyside">
+                        <md-checkbox class="example-margin" >Friday</md-checkbox>
+                         <BR><label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time Start</label>
+                        <input type="time" [(ngModel)]="fri_time_start" formControlName="fri_time_start">
+                        <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i> Time end</label>
+                        <input type="time" [(ngModel)]="fri_time_end" formControlName="fri_time_end">
+                    </div>
+                </li>
+            </ul>
+            <br><br>
+        <button md-raised-button color="primary">Create Course</button>
+    </form>
+</md-card>

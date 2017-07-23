@@ -1,0 +1,98 @@
+<div layout="row">
+            <md-card class="card clearfix" flex>
+               <md-card-content class="left">
+               		<h2>{{model.fullName}} - {{model.ssn}}</h2>
+               		<p>Education: {{model.education}}</p>
+               		<p>Gender: {{model.gender}}</p>
+               		<p>Blood Type: {{model.bloodType}}</p>
+                    <p>Education: {{model.education}}</p>
+               		<p>Medical Condition: {{model.medicalCondition}}</p>
+                   <h2 class="md-title">Bio</h2>
+                   <md-list>
+                       <md-list-item class="md-1-line">
+                           <p class="md-list-item-text">
+                               {{model.bio}}
+                           </p>
+                       </md-list-item>
+                    </md-list>
+                    <img src="https://www.altis.ch/img/team/male.jpg" class="id-profile-img right" alt="">
+               </md-card-content>
+           </md-card>
+<!--             <md-card class="card" flex>
+    <md-card-content>
+        <h2 class="md-title">Skills</h2>
+        <div layout>
+            <div flex="40" layout layout-align="center center">
+                <span class="md-body-1 md-primary">JavaScript</span>
+            </div>
+            <md-slider flex ng-model="80" min="1" max="100" class="md-primary">
+            </md-slider>
+        </div>
+        <div layout>
+            <div flex="40" layout layout-align="center center">
+                <span class="md-body-1 md-warn">AngularJS</span>
+            </div>
+            <md-slider flex ng-model="90" min="1" max="100" class="md-warn">
+            </md-slider>
+        </div>
+        <div layout>
+            <div flex="40" layout layout-align="center center">
+                <span class="md-body-1 md-primary">Jquery</span>
+            </div>
+            <md-slider flex ng-model="70" min="1" max="100" class="md-primary">
+            </md-slider>
+        </div>
+        <div layout>
+            <div flex="40" layout layout-align="center center">
+                <span class="md-body-1 md-warn">CSS</span>
+            </div>
+            <md-slider flex ng-model="60" min="1" max="100" class="md-warn">
+            </md-slider>
+        </div>
+        <div layout>
+            <div flex="40" layout layout-align="center center">
+                <span class="md-body-1 md-primary">Java</span>
+            </div>
+            <md-slider flex ng-model="50" min="1" max="100" class="md-primary">
+            </md-slider>
+        </div>
+    </md-card-content>
+</md-card> -->
+            <md-card class="card" flex>
+                <md-card-content>
+                    <h2 class="md-title">Contact Details</h2>
+                    <div layout>
+                        <div flex="20" layout layout-align="left center">
+                            <span class="md-body-1 md-primary">Email</span>
+                        </div>
+                        <span flex class="md-primary" layout-align="left center">
+                            {{model.email}}
+                        </span>
+                    </div>
+                    <div layout>
+                        <div flex="20" layout layout-align="left center">
+                            <span class="md-body-1 md-primary">Phone Number</span>
+                        </div>
+                        <span flex class="md-primary" layout-align="left center">
+                            {{model.mobile}}
+                        </span>
+                    </div>
+                    <div layout>
+                        <div flex="20" layout layout-align="left center">
+                            <span class="md-body-1 md-primary">Parent Phone Number</span>
+                        </div>
+                        <span flex class="md-primary" layout-align="left center">
+                            {{model.fatherMobile}}
+                        </span>
+                    </div>
+                    <div layout>
+                        <div flex="20" layout layout-align="left center">
+                            <span class="md-body-1 md-primary">Location</span>
+                        </div>
+                        <span flex class="md-primary" layout-align="left center">
+                            {{model.location}}
+                        </span>
+                    </div>
+                </md-card-content>
+            </md-card>
+        </div>

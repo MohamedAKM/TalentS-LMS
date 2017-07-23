@@ -1,0 +1,12 @@
+<md-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">              
+        <md-select placeholder="Users" [(ngModel)]="userid" formControlName="userid">
+           <md-option *ngFor="let user of webService.messages | async" [value]="user.ssn">{{ user.fullName }}</md-option>
+        </md-select>
+        <md-select placeholder="Courses" [(ngModel)]="courseid" formControlName="courseid">
+           <md-option *ngFor="let course of webService.courses | async" [value]="course.code">{{ course.title }} [code: {{course.code}}]</md-option>
+        </md-select>
+            <br><br>
+        <button md-raised-button color="primary">Assign trainee to course</button>
+    </form>
+</md-card>

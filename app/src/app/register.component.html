@@ -1,0 +1,68 @@
+<md-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <md-input-container >
+            <input style="width:350px" mdInput placeholder="Full Name" formControlName="fullName">
+        </md-input-container>
+        
+        <md-input-container>
+            <input type="date" style="width:350px" [ngClass]="{'error': isValid('dob')}" mdInput placeholder="Date Of Birth" formControlName="dob">
+        </md-input-container>
+         <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('interest')}" mdInput placeholder="Subject of interest" formControlName="interest">
+        </md-input-container>
+        <md-input-container>
+            <textarea style="width:350px" [ngClass]="{'error': isValid('bio')}" mdInput placeholder="Bio" formControlName="bio"></textarea>
+        </md-input-container>
+        <md-input-container>
+            <textarea style="width:350px" [ngClass]="{'error': isValid('medicalCondition')}" mdInput placeholder="Medical Condition" formControlName="medicalCondition"></textarea>
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" type="tel" [ngClass]="{'error': isValid('mobile')}" mdInput placeholder="Phone Number" formControlName="mobile">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" type="tel" [ngClass]="{'error': isValid('fatherMobile')}" mdInput placeholder="Parent Phone Number" formControlName="fatherMobile">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('location')}" mdInput placeholder="Area, City, Address" formControlName="location">
+        </md-input-container>        
+        <md-select placeholder="Blood Type" [(ngModel)]="MyBloodType" formControlName="bloodType">
+           <md-option *ngFor="let bt of bts" [value]="bt.title">{{ bt.title }}</md-option>
+        </md-select>
+        <md-select placeholder="Education" [(ngModel)]="MyEducation" formControlName="education">
+           <md-option *ngFor="let level of educationLevel" [value]="level.title">{{ level.title }}</md-option>
+        </md-select>
+        <md-select placeholder="Gender" [(ngModel)]="MyGender" formControlName="gender">
+           <md-option *ngFor="let gender of genderList" [value]="gender.title">{{ gender.title }}</md-option>
+        </md-select>        
+     
+         <md-select *ngIf="currentUser.groupid==3" placeholder="Group" [(ngModel)]="defGroupid" formControlName="groupid">
+           <md-option [value]="4">trainee</md-option>
+        </md-select>           
+       
+        
+          <md-select *ngIf="currentUser.groupid==1 || currentUser.groupid==2" placeholder="Group" [(ngModel)]="defGroupid" formControlName="groupid">
+            <md-option [value]="1">talent</md-option>
+             <md-option [value]="2">client</md-option>
+              <md-option [value]="3">trainer</md-option>
+               <md-option [value]="4">trainee</md-option>
+           <!-- <md-option *ngFor="let group of webService.groups | async" [value]="group.id">{{ group.title }}</md-option> -->
+        </md-select>          
+      
+        <md-input-container>
+            <input style="width:350px" type="number" size="10" [ngClass]="{'error': isValid('ssn')}" mdInput placeholder="National ID" formControlName="ssn">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('email')}" type="email" mdInput placeholder="Email" formControlName="email">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('password')}" type="password" mdInput placeholder="Password" formControlName="password">
+        </md-input-container>
+        <md-input-container>
+            <input style="width:350px" [ngClass]="{'error': isValid('confirmPassword')}" type="password" mdInput placeholder="Confirm Password" formControlName="confirmPassword">
+        </md-input-container>
+        <br>
+        <span *ngIf="form.errors?.mismatchedFields">Passwords do not match</span>
+        <br>
+        <button md-raised-button color="primary">Register</button>
+    </form>
+</md-card>

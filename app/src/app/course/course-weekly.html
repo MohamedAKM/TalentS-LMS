@@ -1,0 +1,27 @@
+<h1>Weekly Schedule</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Course Code</th>
+      <th scope="col">Course Title</th>
+      <th scope="col">Class Location</th>
+      <th scope="col">Class Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let weekly of webService.weekly | async">
+      <td data-label="AccoFunt">{{weekly.code}}</td>
+      <td data-label="Due Date">{{weekly.title}}</td>
+      <td data-label="Amount">{{weekly.location}}</td>
+      <td data-label="Period">
+      	<p *ngIf="weekly.sat_time_start && weekly.sat_time_end">Saturday {{weekly.sat_time_start}} - {{weekly.sat_time_end}}</p>
+      	<p *ngIf="weekly.sun_time_start && weekly.sun_time_end">Sunday {{weekly.sun_time_start}} - {{weekly.sun_time_end}}</p>
+      	<p *ngIf="weekly.mon_time_start && weekly.mon_time_end">Monday {{weekly.mon_time_start}} - {{weekly.mon_time_end}}</p>
+      	<p *ngIf="weekly.tue_time_start && weekly.tue_time_end">Tuesday {{weekly.tue_time_start}} - {{weekly.tue_time_end}}</p>
+      	<p *ngIf="weekly.wed_time_start && weekly.wed_time_end">Wednesday {{weekly.wed_time_start}} - {{weekly.wed_time_end}}</p>
+      	<p *ngIf="weekly.thr_time_start && weekly.thr_time_end">Thrusday {{weekly.thr_time_start}} - {{weekly.thr_time_end}}</p>
+      	<p *ngIf="weekly.fri_time_start && weekly.fri_time_end">Friday {{weekly.fri_time_start}} - {{weekly.fri_time_end}}</p>
+      </td>
+    </tr>
+  </tbody>
+</table>

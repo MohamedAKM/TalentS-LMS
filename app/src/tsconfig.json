@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom","es2016" ],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true
+  }
+}
